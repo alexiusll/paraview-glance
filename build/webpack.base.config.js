@@ -20,9 +20,12 @@ const paths = {
 };
 
 module.exports = {
-  entry: Object.assign({
-    glance: paths.entry,
-  }, externals.getExternalEntries(paths.externals)),
+  entry: Object.assign(
+    {
+      glance: paths.entry,
+    },
+    externals.getExternalEntries(paths.externals)
+  ),
   output: {
     path: paths.output,
     filename: '[name].[contenthash].js',
@@ -65,15 +68,12 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        loader: "pug-plain-loader",
+        loader: 'pug-plain-loader',
       },
       {
         test: /\.s[ca]ss$/,
         // prod/dev fills in the last loader
-        use: [
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ['css-loader', 'sass-loader'],
       },
       {
         test: /\.(js|vue)$/,
@@ -154,7 +154,10 @@ module.exports = {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       'paraview-glance': paths.root,
-      'vtk.js/Sources/Rendering/Core/ColorTransferFunction/ColorMaps.json': path.join(paths.source, 'config/ColorMaps.json'),
+      'vtk.js/Sources/Rendering/Core/ColorTransferFunction/ColorMaps.json': path.join(
+        paths.source,
+        'config/ColorMaps.json'
+      ),
     },
   },
   optimization: {

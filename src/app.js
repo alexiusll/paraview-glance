@@ -64,15 +64,15 @@ export function createViewer(container, proxyConfig = null) {
   });
 
   const app = new Vue({
-    el: container,
-    components: { App },
+    el: container, // 提供一个在页面上已存在的 DOM 元素作为 Vue 实例的挂载目标
+    components: { App }, // 包含 Vue 实例可用组件的哈希表
     store,
     provide: GirderProvider,
     // if in the future we want to configure vuetify ourselves, see
     // https://github.com/girder/girder_web_components/blob/master/README.md
     vuetify: new Vuetify(girderVuetifyConfig),
     proxyManager,
-    template: '<App />',
+    template: '<App />', // 一个字符串模板作为 Vue 实例的标识使用。
   });
 
   // support history-based navigation
