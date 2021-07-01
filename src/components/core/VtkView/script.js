@@ -214,6 +214,7 @@ export default {
     },
     rollLeft() {
       if (this.view) {
+        console.log('this', this);
         this.view.setAnimation(true, this);
         let count = 0;
         let intervalId = null;
@@ -231,6 +232,7 @@ export default {
     },
     rollRight() {
       if (this.view) {
+        console.log('this', this);
         this.view.setAnimation(true, this);
         let count = 0;
         let intervalId = null;

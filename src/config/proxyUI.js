@@ -98,7 +98,7 @@ const Slice = [
   },
   {
     name: 'windowLevel',
-    domain: { min: 0, max: 255, step: 0.01 },
+    domain: { min: 0, max: 255, step: 0.0001 },
   },
   {
     name: 'slice',
